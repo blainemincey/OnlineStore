@@ -7,9 +7,9 @@
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
         <property name="hibernate.bytecode.use_reflection_optimizer">false</property>
         <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-        <property name="hibernate.connection.password">Rbmdah11!</property>
+        <property name="hibernate.connection.password">MY_PASSWORD</property>
         <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/OnlineStore</property>
-        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.username">MY_USERNAME</property>
         <property name="hibernate.current_session_context_class">thread</property>
   
         <mapping resource="com/jboss/samples/onlinestore/entity/Office.hbm.xml" />

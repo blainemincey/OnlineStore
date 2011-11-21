@@ -33,6 +33,12 @@ edit OnlineStore-mysql-ds.xml.  Modify the security credentials and replace
 MY_USERNAME and MY_PASSWORD with the appropriate values.  This file
 should be copied to the EAP server config's deploy directory.
 
+The final change to be made is to modify the 'test' version of the
+Hibernate config file.  Since it is testing a method outside of a 
+container, it uses straight JDBC.  So, within the OnlineStore-Entity, go into
+the src/test/resources directory.  Make the same modifications that were
+made to the previous hibernate.cfg.xml file.
+
 Build the Application
 =====================
 To build the application (EAR file), go into the OnlineStore-Parent
