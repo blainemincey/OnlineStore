@@ -38,5 +38,36 @@ Build the Application
 To build the application (EAR file), go into the OnlineStore-Parent
 directory.  There is only one file here, pom.xml.
 
+From a command line, execute:
 
+mvn clean package
+
+Once built successfully, go into the OnlineStore-EAR/target directory.
+There should be an OnlineStore-EAR-1.0.ear file.  This file can now
+be copied to your EAP server config's deploy directory.
+
+Test the Application
+====================
+There are a couple of 'helper' methods to test the successful
+deployment of the REST service.  A simple 'hello' is executed via
+the following:
+
+http://localhost:8080/OnlineStore-RestService/REST/hello
+
+This will print out the server's current time.
+
+Also, the following URL will echo any string.  For example,
+the following URL will echo 'Blaine' and the server time:
+
+http://localhost:8080/OnlineStore-RestService/REST/echo/Blaine
+
+Next, to test the successful deployment of the REST service
+along with hibernate, the following will pull XML for the
+customer with id of 103:
+
+http://localhost:8080/OnlineStore-RestService/REST/customer/103
+
+Finally, the following will pull back the entire customer list:
+
+http://localhost:8080/OnlineStore-RestService/REST/customers
 
