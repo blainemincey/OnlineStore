@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 7, 2011 1:59:29 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.jboss.samples.onlinestore.entity.Customer" table="CUSTOMERS" >
+        <id name="customernumber" type="int">
+            <column name="CUSTOMERNUMBER" />
+            <generator class="assigned" />
+        </id>
+        <property name="customername" type="string">
+            <column name="CUSTOMERNAME" length="50" not-null="true" />
+        </property>
+        <property name="contactlastname" type="string">
+            <column name="CONTACTLASTNAME" length="50" not-null="true" />
+        </property>
+        <property name="contactfirstname" type="string">
+            <column name="CONTACTFIRSTNAME" length="50" not-null="true" />
+        </property>
+        <property name="phone" type="string">
+            <column name="PHONE" length="50" not-null="true" />
+        </property>
+        <property name="addressline1" type="string">
+            <column name="ADDRESSLINE1" length="50" not-null="true" />
+        </property>
+        <property name="addressline2" type="string">
+            <column name="ADDRESSLINE2" length="50" />
+        </property>
+        <property name="city" type="string">
+            <column name="CITY" length="50" not-null="true" />
+        </property>
+        <property name="state" type="string">
+            <column name="STATE" length="50" />
+        </property>
+        <property name="postalcode" type="string">
+            <column name="POSTALCODE" length="15" />
+        </property>
+        <property name="country" type="string">
+            <column name="COUNTRY" length="50" not-null="true" />
+        </property>
+        <property name="salesrepemployeenumber" type="java.lang.Integer">
+            <column name="SALESREPEMPLOYEENUMBER" />
+        </property>
+        <property name="creditlimit" type="java.lang.Double">
+            <column name="CREDITLIMIT" precision="22" scale="0" />
+        </property>
+    </class>
+</hibernate-mapping>

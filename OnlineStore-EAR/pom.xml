@@ -1,0 +1,85 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>OnlineStore-EAR</artifactId>
+	<packaging>ear</packaging>
+
+	<name>OnlineStoreRS-EAR</name>
+	<url>http://maven.apache.org</url>
+
+	<!-- -->
+	<properties>
+		<!-- This property removes the warning regarding copying being platform 
+			dependent -->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+		<!-- Timestamp format for the property -->
+		<maven.build.timestamp.format>yyyyMMdd'T'HHmmss</maven.build.timestamp.format>
+	</properties>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.0.2</version>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-ear-plugin</artifactId>
+				<version>2.6</version>
+				<configuration>
+					<defaultLibBundleDir>lib/</defaultLibBundleDir>
+					<modules>
+
+						<webModule>
+							<groupId>com.jboss.samples.onlinestore</groupId>
+							<artifactId>OnlineStore-RestService</artifactId>
+						</webModule>
+
+					</modules>
+
+					<jboss>
+						<version>5</version>
+						<unauthenticated-principal>guest</unauthenticated-principal>
+						<loader-repository>
+							org.jboss.samples.rs.webservices:loader=${project.build.finalName}.ear
+                        </loader-repository>
+						<loader-repository-config>
+							java2ParentDelegation=false
+                        </loader-repository-config>
+
+
+					</jboss>
+
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+
+	<dependencies>
+		<dependency>
+			<groupId>com.jboss.samples.onlinestore</groupId>
+			<artifactId>OnlineStore-RestService</artifactId>
+			<version>1.0</version>
+			<type>war</type>
+		</dependency>
+
+		<dependency>
+			<groupId>com.jboss.samples.onlinestore</groupId>
+			<artifactId>OnlineStore-Entity</artifactId>
+			<version>1.0</version>
+		</dependency>
+	</dependencies>
+	<parent>
+		<groupId>com.jboss.samples.onlinestore</groupId>
+		<artifactId>OnlineStore-Parent</artifactId>
+		<version>1.0</version>
+		<relativePath>../OnlineStore-Parent</relativePath>
+	</parent>
+</project>

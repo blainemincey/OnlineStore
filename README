@@ -1,0 +1,42 @@
+Online Store
+Example use of REST with Hibernate
+
+Revision History
+================
+1 - Blaine Mincey(blaine.mincey@redhat.com) - Initial version
+
+Overview
+========
+This is to be somewhat of a skeleton application that can
+be used for many different things.  It implements Hibernate
+to access a MySQL database.  From here, a multitude of 
+different things can be implemented.  The first is a REST Web
+Service. At the moment, Customers is the only table that
+has any type of functionality.  WORK IN PROGRESS 
+
+This has been tested on JBoss EAP 5.1.1.
+
+System Requirements
+===================
+- Maven 2.x or higher
+- JDK 1.6.x
+
+Required modifications
+======================
+Within OnlineStore-Entity, go to the directory src/main/resources.
+Here is the onlineStore.sql that can be executed on a MySQL 5.x
+database.  First create a database, i.e., OnlineStore.  Then, 
+within this newly created database, run the onlineStore.sql script.
+
+Now, within the same directory (src/main/resources) in OnlineStore-Entity, 
+edit OnlineStore-mysql-ds.xml.  Modify the security credentials and replace
+MY_USERNAME and MY_PASSWORD with the appropriate values.  This file
+should be copied to the EAP server config's deploy directory.
+
+Build the Application
+=====================
+To build the application (EAR file), go into the OnlineStore-Parent
+directory.  There is only one file here, pom.xml.
+
+
+

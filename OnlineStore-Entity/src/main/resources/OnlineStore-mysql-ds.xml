@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datasources>
+  <local-tx-datasource>
+    <jndi-name>OnlineStore-mysql</jndi-name>
+    <connection-url>jdbc:mysql://localhost:3306/OnlineStore</connection-url>
+    <driver-class>com.mysql.jdbc.Driver</driver-class>
+    <min-pool-size>1</min-pool-size>
+    <max-pool-size>20</max-pool-size>
+    <user-name>MY_USERNAME</user-name>
+    <password>MY_PASSWORD</password>
+    <exception-sorter-class-name>org.jboss.resource.adapter.jdbc.vendor.MySQLExceptionSorter</exception-sorter-class-name>
+    <!-- corresponding type-mapping in the standardjbosscmp-jdbc.xml (optional) -->
+    <metadata>
+       <type-mapping>mySQL</type-mapping>
+    </metadata>
+  </local-tx-datasource>
+</datasources>
+

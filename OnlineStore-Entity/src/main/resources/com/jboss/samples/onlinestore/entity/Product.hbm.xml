@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 7, 2011 1:59:29 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.jboss.samples.onlinestore.entity.Product" table="PRODUCTS" >
+        <id name="productcode" type="string">
+            <column name="PRODUCTCODE" length="15" />
+            <generator class="assigned" />
+        </id>
+        <property name="productname" type="string">
+            <column name="PRODUCTNAME" length="70" not-null="true" />
+        </property>
+        <property name="productline" type="string">
+            <column name="PRODUCTLINE" length="50" not-null="true" />
+        </property>
+        <property name="productscale" type="string">
+            <column name="PRODUCTSCALE" length="10" not-null="true" />
+        </property>
+        <property name="productvendor" type="string">
+            <column name="PRODUCTVENDOR" length="50" not-null="true" />
+        </property>
+        <property name="productdescription" type="string">
+            <column name="PRODUCTDESCRIPTION" length="4000" not-null="true" />
+        </property>
+        <property name="quantityinstock" type="short">
+            <column name="QUANTITYINSTOCK" not-null="true" />
+        </property>
+        <property name="buyprice" type="double">
+            <column name="BUYPRICE" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="msrp" type="double">
+            <column name="MSRP" precision="22" scale="0" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

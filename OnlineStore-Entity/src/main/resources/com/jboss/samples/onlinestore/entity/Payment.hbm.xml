@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 7, 2011 1:59:29 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.jboss.samples.onlinestore.entity.Payment" table="PAYMENTS" >
+        <id name="paymentnumber" type="int">
+            <column name="PAYMENTNUMBER" />
+            <generator class="assigned" />
+        </id>
+        <property name="customernumber" type="int">
+            <column name="CUSTOMERNUMBER" not-null="true" />
+        </property>
+        <property name="checknumber" type="string">
+            <column name="CHECKNUMBER" length="50" not-null="true" />
+        </property>
+        <property name="paymentdate" type="date">
+            <column name="PAYMENTDATE" length="10" not-null="true" />
+        </property>
+        <property name="amount" type="double">
+            <column name="AMOUNT" precision="22" scale="0" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

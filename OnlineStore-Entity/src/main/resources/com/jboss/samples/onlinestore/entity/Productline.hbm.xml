@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 7, 2011 1:59:29 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.jboss.samples.onlinestore.entity.Productline" table="PRODUCTLINES">
+        <id name="productline" type="string">
+            <column name="PRODUCTLINE" length="50" />
+            <generator class="assigned" />
+        </id>
+        <property name="textdescription" type="string">
+            <column name="TEXTDESCRIPTION" length="4000" />
+        </property>
+        <property name="htmldescription" type="string">
+            <column name="HTMLDESCRIPTION" length="4000" />
+        </property>
+    </class>
+</hibernate-mapping>
